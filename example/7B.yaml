@@ -11,27 +11,26 @@ lora:
 
 # optim
 seq_len: 32768
-batch_size: 1  # Batch size limited to 1 due to hardware constraints
-gradient_accumulation_steps: 8  # Accumulate gradients over 8 steps to simulate a larger batch size
-max_steps: 1000
+batch_size: 1
+max_steps: 300
 optim:
-  lr: 5e-5  # Adjusted learning rate
-  weight_decay: 0.01
+  lr: 6.e-5
+  weight_decay: 0.1
   pct_start: 0.05
 
 # other
-seed: 42
-log_freq: 10
-eval_freq: 200
+seed: 0
+log_freq: 1
+eval_freq: 100
 no_eval: False
-ckpt_freq: 500
+ckpt_freq: 100
 
-save_adapters: True  # Save only trained LoRA adapters
+save_adapters: True  # save only trained LoRA adapters. Set to `False` to merge LoRA adapter into the base model and save full fine-tuned model
 
-run_dir: "/path/to/output-dir/onlyfans-finetune"  # Update with your desired output directory
+run_dir: ""  # Fill
 
 wandb:
-  project: "suada"
-  run_name: "onlyfans_finetune"
-  key: "your_wandb_api_key"
+  project: "" # your wandb project name
+  run_name: "" # your wandb run name
+  key: "" # your wandb api key
   offline: False
