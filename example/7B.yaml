@@ -19,7 +19,6 @@ max_steps: 2500  # Adjust based on dataset size for adequate training
 optim:
   lr: 1e-4  # Learning rate suitable for fine-tuning with small batches
   weight_decay: 0.0  # No weight decay for fine-tuning
-  betas: [0.9, 0.98]  # AdamW betas adjusted for stability
   eps: 1e-6  # Epsilon for numerical stability
   lr_scheduler_type: "cosine"  # Cosine decay learning rate scheduler
   warmup_steps: 100  # Warm-up steps to stabilize training
