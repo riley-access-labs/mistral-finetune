@@ -8,6 +8,7 @@ data:
 model_id_or_path: "/home/rileywebb/mistral_models/nemo"  # Change to downloaded path
 lora:
   rank: 64
+  alpha: 32
 
 # optim
 seq_len: 32768
