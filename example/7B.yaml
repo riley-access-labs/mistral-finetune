@@ -1,11 +1,11 @@
 # data
 data:
-  instruct_data: "/path/to/cleaned_onlyfans_dataset.jsonl"  # Update with your dataset path
+  instruct_data: "/home/rileywebb/botly-dataset.jsonl"  # Update with your dataset path
   data: ""  # No pretraining data used
-  eval_instruct_data: "/path/to/onlyfans_eval_dataset.jsonl"  # Optionally update if you have a validation set
+  eval_instruct_data: "/home/rileywebb/botly-dataset-eval.jsonl"  # Optionally update if you have a validation set
 
 # model
-model_id_or_path: "/path/to/mistral_models/7B_instruct"  # Update with your model path
+model_id_or_path: "/home/rileywebb/mistral_models/7B"  # Update with your model path
 lora:
   rank: 64
 
