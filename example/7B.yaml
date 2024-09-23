@@ -13,7 +13,6 @@ lora:
 seq_len: 32768
 batch_size: 1
 max_steps: 500
-gradient_accumulation_steps: 8
 optim:
   lr: 1e-5
   weight_decay: 0.01
