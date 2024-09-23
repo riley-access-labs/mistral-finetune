@@ -10,9 +10,9 @@ lora:
   rank: 64
 
 # optim
-seq_len: 16384
+seq_len: 32768
 batch_size: 1
-max_steps: 150
+max_steps: 300
 optim:
   lr: 1e-5
   weight_decay: 0.01
