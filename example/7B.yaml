@@ -27,7 +27,7 @@ ckpt_freq: 100
 
 save_adapters: True  # save only trained LoRA adapters. Set to `False` to merge LoRA adapter into the base model and save full fine-tuned model
 
-run_dir: ""  # Fill
+run_dir: "/home/rileywebb/mistral-finetune/output-dir/onlyfans-tune"  # Fill
 
 wandb:
   project: "suada" # your wandb project name
