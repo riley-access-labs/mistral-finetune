@@ -1,44 +1,37 @@
-# Data
+# data
 data:
-  instruct_data: "/home/rileywebb/datasets/combined_dataset.jsonl"  # Path to the full combined dataset
-  data: ""  # Optional pretraining data
-  eval_instruct_data: "/home/rileywebb/datasets/eval_dataset.jsonl"  # Optional evaluation data
+  instruct_data: "/path/to/cleaned_onlyfans_dataset.jsonl"  # Update with your dataset path
+  data: ""  # No pretraining data used
+  eval_instruct_data: "/path/to/onlyfans_eval_dataset.jsonl"  # Optionally update if you have a validation set
 
-# Model
-model_id_or_path: "/home/rileywebb/mistral_models/7B/instruct"  # Path to Mistral 7B Instruct model
+# model
+model_id_or_path: "/path/to/mistral_models/7B_instruct"  # Update with your model path
 lora:
-  rank: 8  # Balanced LoRA rank for capacity and memory
-  alpha: 32  # LoRA scaling factor
-  dropout: 0.1  # LoRA dropout to mitigate overfitting
+  rank: 64
 
-# Optimization
-seq_len: 32768  # Required context length
-batch_size: 1  # Due to memory constraints
-gradient_accumulation_steps: 32  # Simulate an effective batch size of 32
-max_steps: 2500  # Adjust based on dataset size for adequate training
+# optim
+seq_len: 32768
+batch_size: 1  # Batch size limited to 1 due to hardware constraints
+gradient_accumulation_steps: 8  # Accumulate gradients over 8 steps to simulate a larger batch size
+max_steps: 1000
 optim:
-  lr: 1e-4  # Learning rate suitable for fine-tuning with small batches
-  weight_decay: 0.0  # No weight decay for fine-tuning
-  eps: 1e-6  # Epsilon for numerical stability
-  lr_scheduler_type: "cosine"  # Cosine decay learning rate scheduler
-  warmup_steps: 100  # Warm-up steps to stabilize training
+  lr: 5e-5  # Adjusted learning rate
+  weight_decay: 0.01
+  pct_start: 0.05
 
-# Other
-seed: 42  # For reproducibility
-log_freq: 5  # Frequent logging for close monitoring
-eval_freq: 250  # Evaluation frequency
+# other
+seed: 42
+log_freq: 10
+eval_freq: 200
 no_eval: False
-ckpt_freq: 500  # Checkpoint frequency
-use_gradient_checkpointing: True  # Reduce memory usage
-bf16: True  # Use bfloat16 precision on A100 GPUs
-gradient_clipping: 1.0  # Clip gradients to prevent exploding gradients
+ckpt_freq: 500
 
-save_adapters: True  # Save only LoRA adapters
+save_adapters: True  # Save only trained LoRA adapters
 
-run_dir: "/home/rileywebb/mistral-finetune/output-dir/full_finetune"
+run_dir: "/path/to/output-dir/onlyfans-finetune"  # Update with your desired output directory
 
 wandb:
   project: "suada"
-  run_name: "full_finetune"
-  key: "your-wandb-api-key"  # Replace with your actual WandB API key
+  run_name: "onlyfans_finetune"
+  key: "your_wandb_api_key"
   offline: False
