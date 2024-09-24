@@ -27,7 +27,7 @@ ckpt_freq: 100  # Save checkpoints more frequently for potential rollbacks
 
 save_adapters: False  # save only trained LoRA adapters. Set to `False` to merge LoRA adapter into the base model and save full fine-tuned model
 
-run_dir: "/home/rileywebb/mistral-finetune/output-dir/roleplay-tune"  # Fill
+run_dir: "/home/rileywebb/mistral-finetune/output-dir/sonnet-roleplay-tune"  # Fill
 
 wandb:
   project: "suada" # your wandb project name
