@@ -5,7 +5,7 @@ data:
   eval_instruct_data: "/home/rileywebb/sonnet-roleplay-dataset-eval.jsonl"  # Optionally update if you have a validation set
 
 # model
-model_id_or_path: "/home/rileywebb/mistral-finetune/output-dir/suada_sonnet_roleplay_train"  # Update with your model path
+model_id_or_path: "/home/rileywebb/mistral-finetune/output-dir/suada_rp_tune/consolidated"  # Update with your model path
 lora:
   rank: 128
 
